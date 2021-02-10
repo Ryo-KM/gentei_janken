@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>限定ジャンケン</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="sa sa--up">
+  <section class="title">
+    <h1>限定ジャンケン</h1>
+  </section>
+
+  <section class="rule">
+    <h2>ルール</h2>
+    <p>・各Playerは、「グー」「チョキ」「パー」をそれぞれ3回ずつ出す権利を与られる</p>
+    <p>・自信の手札テーブル下にある3枚のカードのうち、1つをクリックする</p>
+    <p>・9回ジャンケンを行い、合計勝利数が多い者が勝者となる</p>
+    <p>・敗者は地下労働施設行きとなり、死ぬまでタダ働きを強いられる</p>
+  </section>
+
+  <section class="input">
+    <p>Please enter your name and press the OK button</p>
+    <form action="" class="form">
+      <div>
+        <label for="name1">Player1</label><br>
+        <input id="name1" type="text" placeholder="Name of Player1"></input>
+      </div>
+      <div>
+        <label for="name2">Player2</label><br>
+        <input id="name2" type="text" placeholder="Name of Player2"></input>
+      </div>
+      <a href="#" class="btn10" id="name_btn">
+        <span>Name OK</span>
+        <div class="transition"></div>
+      </a>
+    </form>
+  </section>
+
+  <div class="light-button button-wrapper" id="hide_btn">
+    <div class="button">
+      <span><a href="battle.html">GAME START</a></span>
+    </div>  
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='js/main.js'></script>
+</body>
+</html>

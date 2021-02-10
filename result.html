@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>限定ジャンケン</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>JUDGE!</h1>
+  </header>
+
+  <section class="result">
+    <div id="pic_1" class="block"></div>
+    <div class="VS">VS</div>
+    <div id="pic_2" class="block"></div>
+  </section>
+
+  <section id="conclude">
+  </section>
+
+
+  <a href="battle.html" class="btn6">選択画面へ戻る</a>
+  <a href="opening.html" class="btn6 end">バトル終了</a>
+
+
+  <section id="end">
+  </section>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='js/main.js'></script>
+  <script>
+    $("#conclude").hide();
+    $("#end").hide();
+    let name1 = localStorage.getItem('name1')
+    let name2 = localStorage.getItem('name2')
+    let hand1 = localStorage.getItem('hand1')
+    let hand2 = localStorage.getItem('hand2')
+    let sum = parseInt(localStorage.getItem('sum_battle'), 10);
+    let pic_1 = localStorage.getItem(hand1)
+    let pic_2 = localStorage.getItem(hand2)
+    $(window).on('load', function(){
+      $(".block").addClass("active");
+    });
+    $("#pic_1").append(`<p>${name1}の出した手は${hand1}</p>`);
+    $("#pic_2").append(`<p>${name2}の出した手は${hand2}</p>`);
+    $("#pic_1").append(`<img src=${pic_1} width="300px" height="300px">`);
+    $("#pic_2").append(`<img src=${pic_2} width="300px" height="300px">`);
+    if(hand1 == hand2){
+      $("#conclude").fadeIn(3000).html(`<p>引き分け、、、！引き分けである、、、！</p>`);
+      plus1('sum_battle');
+    }else if(hand1=='グー' && hand2=='チョキ'){
+      $("#conclude").fadeIn(3000).html(`<p>${name1}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win1');
+      plus1('sum_battle');
+    }else if(hand1=='グー' && hand2=='パー'){
+      $("#conclude").fadeIn(3000).html(`<p>${name2}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win2');
+      plus1('sum_battle');
+    }else if(hand1=='チョキ' && hand2=='グー'){
+      $("#conclude").fadeIn(3000).html(`<p>${name2}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win2');
+      plus1('sum_battle');
+    }else if(hand1=='チョキ' && hand2=='パー'){
+      $("#conclude").fadeIn(3000).html(`<p>${name1}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win1');
+      plus1('sum_battle');
+    }else if(hand1=='パー' && hand2=='グー'){
+      $("#conclude").fadeIn(3000).html(`<p>${name1}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win1');
+      plus1('sum_battle');
+    }else if(hand1=='パー' && hand2=='チョキ'){
+      $("#conclude").fadeIn(3000).html(`<p>${name2}の勝利、、、！圧倒的勝利、、、！</p>`);
+      plus1('win2');
+      plus1('sum_battle');
+    }
+
+    if(sum>=9){
+      $("#end").fadeIn(3500).append(`<p><a href='final.html'>最終結果</p>`);
+    }
+  </script>
+</body>
+</html>

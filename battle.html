@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>限定ジャンケン</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="my-spinner" class="box">
+    <div class="spinner type1">
+      <span>Loading...</span>
+    </div>
+  </div>
+
+  <header class="fight sa sa--down">
+    <h1>FIGHTING!</h1>
+  </header>
+
+  <div class="back_top sa sa--down">
+    <a href="opening.html" class="end">先頭ページへ戻る</a>
+  </div>
+
+  <section id="battle_num" class="battle_num sa sa--down">
+  </section>
+
+  <section class="motite">
+    <div class="play1 sa sa--rl">
+      <dl id="play1_name"></dl>
+      <dl>
+        <dt>グー</dt>
+        <dd id="hand1_gu">
+          <img src="img/gu.jpg" alt="">
+          <img src="img/gu.jpg" alt="">
+          <img src="img/gu.jpg" alt="">
+        </dd>
+      </dl>
+      <dl>
+        <dt>チョキ</dt>
+        <dd id="hand1_choki">
+          <img src="img/choki.jpg" alt="">
+          <img src="img/choki.jpg" alt="">
+          <img src="img/choki.jpg" alt="">
+        </dd>
+      </dl>
+      <dl>
+        <dt>パー</dt>
+        <dd id="hand1_pa">
+          <img src="img/pa.jpg" alt="">
+          <img src="img/pa.jpg" alt="">
+          <img src="img/pa.jpg" alt="">
+        </dd>
+      </dl>
+    </div>
+
+    <div class="play2 sa sa--lr">
+      <dl id="play2_name"></dl>
+      <dl>
+        <dt>グー</dt>
+        <dd id="hand2_gu">
+          <img src="img/gu.jpg" alt="">
+          <img src="img/gu.jpg" alt="">
+          <img src="img/gu.jpg" alt="">
+        </dd>
+      </dl>
+      <dl>
+        <dt>チョキ</dt>
+        <dd id="hand2_choki">
+          <img src="img/choki.jpg" alt="">
+          <img src="img/choki.jpg" alt="">
+          <img src="img/choki.jpg" alt="">
+        </dd>
+      </dl>
+      <dl>
+        <dt>パー</dt>
+        <dd id="hand2_pa">
+          <img src="img/pa.jpg" alt="">
+          <img src="img/pa.jpg" alt="">
+          <img src="img/pa.jpg" alt="">
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="desc sa sa--up">
+    <p>次に出す手をクリックして下さい</p>
+    <p>次に出す手をクリックして下さい</p>
+  </section>
+
+  <section class="hand_select sa sa--up">
+    <div class="play1">
+      <button id="play1_gu" type="button">
+        <img src="img/gu.jpg" alt="">
+      </button>
+      <button id="play1_choki" type="button">
+        <img src="img/choki.jpg" alt="">
+      </button>
+      <button id="play1_pa" type="button">
+        <img src="img/pa.jpg" alt="">
+      </button>
+    </div>
+    
+    <div class="play2">
+      <button id="play2_gu" type="button">
+        <img src="img/gu.jpg" alt="">
+      </button>
+      <button id="play2_choki" type="button">
+        <img src="img/choki.jpg" alt="">
+      </button>
+      <button id="play2_pa" type="button">
+        <img src="img/pa.jpg" alt="">
+      </button>
+    </div>
+  </section>
+
+  <div class="bar-anchor sa sa--up">
+    <a href="result.html">BATTLE START</a>
+    <div class="transition-bar"></div>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='js/main.js'></script>
+  <script>
+    window.onload = function() {
+    let spinner = document.getElementById('my-spinner');
+    // .box に .loaded を追加してローディング表示を消す
+    spinner.classList.add('loaded');
+    }
+    let name1 = localStorage.getItem('name1')
+    let name2 = localStorage.getItem('name2')
+    let win1 = localStorage.getItem('win1')
+    let win2 = localStorage.getItem('win2')
+    let sum = localStorage.getItem('sum_battle')
+
+    $("#play1_name").append(`<p>${name1}  ${win1}勝</p>`);
+    $("#play2_name").append(`<p>${name2}  ${win2}勝</p>`);
+    $("#battle_num").append(`<p>ー 第${sum}回戦 ー</p>`);
+
+    let i_1 = parseInt(localStorage.getItem('gu_1'), 10);
+    let i_2 = parseInt(localStorage.getItem('choki_1'), 10);
+    let i_3 = parseInt(localStorage.getItem('pa_1'), 10);
+    let i_4 = parseInt(localStorage.getItem('gu_2'), 10);
+    let i_5 = parseInt(localStorage.getItem('choki_2'), 10);
+    let i_6 = parseInt(localStorage.getItem('pa_2'), 10);
+    for(let i=0; i<i_1; i++) {
+      remove1_last('グー');
+    }
+    for(let i=0; i<i_2; i++) {
+      remove1_last('チョキ');
+    }
+    for(let i=0; i<i_3; i++) {
+      remove1_last('パー');
+    }
+    for(let i=0; i<i_4; i++) {
+      remove2_last('グー');
+    }
+    for(let i=0; i<i_5; i++) {
+      remove2_last('チョキ');
+    }
+    for(let i=0; i<i_6; i++) {
+      remove2_last('パー');
+    }
+
+  </script>
+</body>
+</html>

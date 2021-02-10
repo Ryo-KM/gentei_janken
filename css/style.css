@@ -1,0 +1,597 @@
+
+/* bodyに関しては、openingとfinal以外の全てで共通 */
+
+body{
+  width: 1200px;
+  margin: 0px auto;
+  background-image: radial-gradient(circle farthest-corner at center, rgb(33, 41, 48) 0%, #1C262B 100%);
+  color: white;
+  font-family: serif;
+  text-align: center;
+  background: #00002E;
+  background: radial-gradient(#00002E,black);
+  background: radial-gradient(circle farthest-corner at center, #00002E, rgb(17, 7, 43));
+}
+
+
+/* Index.htmlに対するCSS */
+.title h1{
+  font-size: 70px;
+  margin: 40px auto 20px auto;
+}
+
+
+.rule{
+  display: inline-block;
+  margin: 0px auto;
+}
+
+.rule h2{
+  /* text-align: center; */
+  font-size: 45px;
+}
+
+
+.rule p{
+  text-align: left;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+
+.input p{
+  font-size: 25px;
+  margin: 55px auto 10px auto;
+}
+
+.form{
+  display: flex;
+  justify-content: space-around;
+  width: 950px;
+  margin: 0px auto;
+}
+
+.form label{
+  font-size: 20px;
+}
+
+.form input{
+  width: 250px;
+  height: 25px;
+}
+
+
+
+/* NAME 0Kボタンの設定 */
+.btn10{
+  padding: 15px 100px;
+  margin:15px 4px 0px 4px;
+  color: #fff;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  vertical-align: center;
+}
+
+
+.btn10{
+  /* top: 20px; */
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase!important;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: hand;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid #fff;
+  border-radius:50px;
+  /* position: relative; */
+  overflow: hidden!important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: transparent!important;
+  z-index:10;
+
+}
+
+
+.btn10:hover{
+  border: 1px solid #071982;
+  color: #80ffd3!important;
+}
+
+.btn10::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #071982;
+  position: absolute;
+    -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg); 
+  transform: skewX(-20deg);   
+  left: -10%;
+  opacity: 1;
+  top: 0;
+  z-index: -12;
+  -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow:2px 0px 14px rgba(0,0,0,.6);
+} 
+
+.btn10::after {
+  content: '';
+  width: 0%;
+  height: 100%;
+  display: block;
+  background: #80ffd3;
+  position: absolute;
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg); 
+  transform: skewX(-20deg);   
+  left: -10%;
+  opacity: 0;
+  top: 0;
+  z-index: -15;
+  -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
+  -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  transition: all .4s cubic-bezier(.2,.95,.57,.99);
+  box-shadow: 2px 0px 14px rgba(0,0,0,.6);
+}
+.btn10:hover::before, .btn1O:hover::before{
+  opacity:1;
+  width: 116%;
+}
+.btn10:hover::after, .btn1O:hover::after{
+  opacity:1;
+  width: 120%;
+}
+
+
+/* GAME STARTボタンの設定 */
+.button-wrapper {
+  display: inline-block;
+  margin: 20px 5px;
+  padding: 40px;
+}
+
+.button {
+  background: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: all .35s ease-in-out .35s;
+  margin: 0 auto;
+  width: 350px;
+  text-align: center;
+}
+
+.button span {
+  font-size: 50px;
+  display: block;
+  padding: 0px;
+  background: #fff;
+  z-index: 100;
+  position: relative;
+  transition: all .35s ease-in-out .35s;
+}
+
+.button a{
+  color: #00002E;
+  text-decoration: none;
+}
+.button:hover span {
+  background: #36B4C7;
+  color: #fff;
+  transition: all .35s ease-in-out .35s;
+}
+.button:after {
+  padding: 5px;
+  bottom: -100%;
+  right: -100%;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #36B4C7;
+  transition: all .35s ease-in-out .5s;
+}
+.button:hover:after {
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out .35s;
+}
+.button:before {
+  top: -100%;
+  left: -100%;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #36B4C7;
+  transition: all .35s ease-in-out .5s;
+}
+.button:hover:before {
+  left: 0;
+  top: 0;
+  transition: all ease-in-out .35s;
+}
+
+/* index.htmlは終了 */
+
+
+
+
+/* battle.htmlスタート */
+
+.fight h1{
+  margin: 16px 0px 0px 0px;
+}
+
+.battle_num p{
+  margin: 12px 0px;
+}
+
+.box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  -webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+  transition: all 1.2s ease;
+  color: #fff; /* ローディングアニメーションカラー */
+  background-color: #333; /* 背景カラー */
+}
+
+.box.loaded{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+
+
+header h1{
+  font-size: 48px;
+}
+
+.battle_num{
+  font-size: 32px;
+}
+
+.motite{
+  display: flex;
+  justify-content: space-around;
+}
+
+.motite dl{
+  display: flex;
+  justify-content: left;
+  border: solid 2px white;
+  margin: 0px;
+}
+
+.motite dt{
+  border-right: solid 2px white;
+  width: 100px;
+  line-height: 90px;
+  font-size: 32px;
+}
+
+.motite dd{
+  margin: 0px;
+}
+.motite img{
+  width: 90px;
+  height: 90px;
+  padding: 0px;
+  margin: 2px;
+}
+
+#play1_name{
+  font-size: 42px;
+  margin: 0px;
+  display: block;
+}
+
+#play2_name{
+  font-size: 42px;
+  margin: 0px;
+  display: block;
+}
+
+#play1_name p{
+  margin: 10px;
+}
+
+#play2_name p{
+  margin: 10px;
+}
+
+.play1{
+border: solid 2px white;
+}
+
+.play2{
+border: solid 2px white;
+}
+
+
+.desc{
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+}
+
+
+.hand_select{
+  display: flex;
+  justify-content: space-around;
+}
+
+.hand_select .play1{
+  display: flex;
+}
+
+.hand_select .play2{
+  display: flex;
+}
+
+.hand_select button{
+  cursor: pointer;
+  padding: 0px;
+}
+
+.hand_select img{
+  width: 100px;
+  height: 100px;
+}
+
+
+.bar-anchor{
+  padding: 20px 10px;
+  margin:45px 4px 3px 4px;
+  color: #fff;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  overflow:hidden;
+  /* border:1px solid #6098FF; */
+}
+.bar-anchor a{
+  font-size: 30px;
+  background:#00002E;
+  width:100%;
+  position:relative;
+  padding:20px 70px;
+  -moz-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  text-decoration: none;
+  color: white;
+  /* border:1px solid white;  */
+}
+.transition-bar{
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 0;
+  height: 100%;
+  background: #80ffd3;
+  z-index:-1;
+/*     -ms-transform: skewX(-20deg); 
+    -webkit-transform: skewX(-20deg); 
+    transform: skewX(-20deg); */
+}
+.bar-anchor:hover a{
+  color: #80ffd3!important;
+  background-color: #071982;
+}
+.bar-anchor:hover .transition-bar{
+  width:120%;
+  left:110%;
+  -moz-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  
+}
+
+.back_top{
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+}
+
+.back_top a{
+  color: white;
+  text-decoration: none;
+}
+
+
+.hand_select img{
+  /* width: 300px;
+  border: solid 1px #000033; */
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+.hand_select img:hover{
+  cursor: pointer;
+  border: solid 1px red;
+  transform: rotate(720deg) scale(1.3);
+  
+}
+
+/* battle.html終了 */
+
+/* result.html開始 */
+.block {
+  width: 400px;
+  line-height: 0;
+  margin: 0px;
+  font-size: 26px;
+}
+
+
+.block img {
+  opacity: 0;
+  transform: scale(1.2) translateY(80px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.block.active img {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+
+.result{
+  display: flex;
+  justify-content: space-around;
+}
+
+.VS{
+  font-size: 70px;
+  line-height: 310px;
+}
+
+#conclude{
+  margin: 60px 0px 10px 0px;
+  font-size: 40px;
+}
+
+
+.btn6{
+  padding: 15px 100px;
+  margin:10px 4px;
+  color: #fff;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+  font-size: 24px;
+}
+
+.btn6{
+  border:1px solid transparent; 
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+}
+
+.btn6::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom:0px;
+  z-index:-1;
+  width: 0%;
+  height:1px;
+  background: #6098FF;
+  box-shadow: inset 0px 0px 0px #6098FF;
+  display: block;
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+}
+
+.btn6:hover::before {
+  width:100%;
+}
+
+.btn6::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top:0px;
+  z-index:-1;
+  width: 0%;
+  height:1px;
+  background: #6098FF;
+  -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+}
+.btn6:hover::after {
+  width:100%;
+}
+.btn6:hover{
+  border-left:1px solid #6098FF;
+  border-right:1px solid #6098FF;
+}
+
+
+#end a{
+  color: white;
+  text-decoration: none;
+  font-size: 34px;
+  margin-top: 10px;
+}
+
+/* end.htmlセクション開始 */
+
+
+
+/* スクロールアクションセクション開始 */
+.sa {
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.sa--lr {
+  transform: translate(-200px, 0);
+}
+
+.sa--rl {
+  transform: translate(200px, 0);
+}
+
+.sa--up {
+  transform: translate(0, 100px);
+}
+
+.sa--down {
+  transform: translate(0, -100px);
+}
+
+.sa--scaleUp {
+  transform: scale(.5);
+}
+
+.sa--scaleDown {
+  transform: scale(1.5);
+}
+
+.sa--rotateL {
+  transform: rotate(180deg);
+}
+
+.sa--rotateR {
+  transform: rotate(-180deg);
+}
+
+/* スクロールアクション終了 */

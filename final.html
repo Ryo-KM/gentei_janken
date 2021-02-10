@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>限定ジャンケン</title>
+  <link rel="stylesheet" href="css/final.css">
+</head>
+<body>
+
+
+<section class="box">
+  <p>
+    <a href="opening.html" class="end">先頭ページへ戻る</a>
+  </p>
+  <div id="final" class="final">
+    <h1>CONGRATULATIONS!</h1>
+  </div>
+</section>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='js/main.js'></script>
+  <script>
+    let name1 = localStorage.getItem('name1')
+    let name2 = localStorage.getItem('name2')
+    let win1 = parseInt(localStorage.getItem('win1'), 10);
+    let win2 = parseInt(localStorage.getItem('win2'), 10);
+
+    if(win1 == win2){
+      $("#final").append(`<p>引き分け！</p>`);
+    }else if(win1 > win2){
+      $("#final").append(`<p>${name1}の勝利！</p>`);
+    }else if(win2 > win1){
+      $("#final").append(`<p>${name2}の勝利！</p>`);
+    }
+
+  </script>
+</body>
+</html>
